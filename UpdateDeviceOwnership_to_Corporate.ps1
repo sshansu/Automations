@@ -8,9 +8,9 @@ In no event shall Microsoft, its authors, or anyone else involved in the creatio
 
 #Initialize Variables
 #$global:authToken = $null
-$global:TenantID = "1d2f5bab-e836-4ffa-9e9c-b6fc5d8998ee"
-$global:ClientID = "2922e832-ce02-4fcd-a0cb-e85c791d9ebf"
-$global:ClientSecret = "iXZ8Q~9pOZaiBm1UFVy_sdgLScYk-4irky9oja6T"
+$global:TenantID = ""
+$global:ClientID = ""
+$global:ClientSecret = ""
 
 ####################################################
 Function Get-AuthToken {
