@@ -94,7 +94,7 @@ Function Validate-AuthToken{
 
 Validate-AuthToken
 
-$URI = "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations?`$filter=contains(displayName, 'Phase')&select=id,displayName"
+$URI = "https://graph.microsoft.com/beta/deviceManagement/deviceConfigurations?`$select=id,displayName"
 $result = Invoke-RestMethod -Uri $Uri  -Method get -Headers $global:authToken
 $policies = $result.value
 
