@@ -6,11 +6,11 @@
 # This script is not supported under any Microsoft standard support program or service.             #
 # The script is provided AS IS without warranty of any kind.                                        #
 #                                                                                                   #
-# Script Name : SelfHeal.PS1                                                           #
-# Purpose     : The script is  to discover potential cause of client inactivity                 #
+# Script Name : SelfHeal.PS1                                                                        #
+# Purpose     : The script is  to discover potential cause of client inactivity                     #
 #               and stores results to azure storage.                                                #
 # Version     : v1.0                                                                                #
-# Created by  : sshansu@microsoft.com									          #
+# Created by  : sshansu@microsoft.com								    #
 #                                                                                                   #    
 #####################################################################################################
 
@@ -18,12 +18,12 @@
 <sites>
   <default>
     <!--- Site Settings -->
-    	<PrimarySiteServer>AZGLGLNEVLA03.Global.batgen.com</PrimarySiteServer>
-    	<PrimarySiteURL>https://AZGLGLNEVLA03.Global.batgen.com</PrimarySiteURL>
+    	<PrimarySiteServer>Primary site FQDN</PrimarySiteServer>
+    	<PrimarySiteURL>https://Primary site FQDN</PrimarySiteURL>
     	<SCCMEnv>2207</SCCMEnv>
     	<SiteCode>MHN</SiteCode>
-	<MP OnPrem="AZGLGLNEVLA03.Global.batgen.com" Internet="BATCLOUDMGNE.CLOUD.BAT.NET/CCM_Proxy_MutualAuth/72057594037928288" />
-	<ForNonClients Flag="Yes" LocalClientPath="C:\Windows\CCMSetup" InstallParams="C:\Windows\CCMSetup\ccmsetup.exe CCMHOSTNAME=BATCLOUDMGNE.CLOUD.BAT.NET/CCM_Proxy_MutualAuth/72057594037928288 SMSMP=AZGLGLNEVLA03.Global.batgen.com /mp:BATCLOUDMGNE.CLOUD.BAT.NET/CCM_Proxy_MutualAuth/72057594037928288 SMSSiteCode=BAT /UsePKICert /NoCRLCheck" />
+	<MP OnPrem="MP FQDN" Internet="CMG URL" />
+	<ForNonClients Flag="Yes" LocalClientPath="C:\Windows\CCMSetup" InstallParams="C:\Windows\CCMSetup\ccmsetup.exe CCMHOSTNAME=CMG URL SMSMP=MP FQDN /mp:CMG URL SMSSiteCode=MHN /UsePKICert /NoCRLCheck" />
 	<Service>
         <Name>BITS</Name>
         <Name>CCMEXEC</Name> 
