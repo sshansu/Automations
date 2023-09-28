@@ -250,9 +250,9 @@ param($DeviceName, $ComplianceName, $Setting)
 }
 
 $table = @()
-$Group = "All Devices"
-$Policy = "Compliance Policy _ W"
-$Setting = "AppPresent"
+$Group = "All Devices" # --> Device Group Name
+$Policy = "Compliance Policy _ W" # --> Compliance Policy Name
+$Setting = "AppPresent"   # --> specify setting name referenced in Compliance policy
 
 $FullList = Get-GroupMembership -GroupName $Group
 $Devices = $FullList.displayName | select -Unique
