@@ -20,8 +20,8 @@
 $AddDays = "3"
 $Module = "PSWindowsUpdate"
 $21H2 = "HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\TargetVersionUpgradeExperienceIndicators\CO21H2"
-$WorkspaceID = "f8b85f92-be02-4d28-8277-598f8cac639d"
-$Primarykey = "uwjlBubN/PQEPWoahVdbHDLmrQdVVjpwPxWg2/SzwCwbfmfCkxyM6zDytK6XA2Tgatjl+btzNvvCvmQ3py5OLA=="
+$WorkspaceID = "" # Specify Log Analytics Workspace ID
+$Primarykey = "" # Specify Primary key of Workspace ID 
 $Category = "SU_Windows11Upgrade"
 $UpdateIDReg = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\WindowsUpdate\Auto Update\CommitRequired"
 
