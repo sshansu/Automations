@@ -3,20 +3,16 @@ This sample script is not supported under any Microsoft standard support program
 The sample script is provided AS IS without warranty of any kind.
 Microsoft further disclaims all implied warranties including, without limitation, any implied warranties of merchantability or of fitness for a particular purpose.
 The entire risk arising out of the use or performance of the sample scripts and documentation remains with you.
-In no event shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the scripts be liable for any damages whatsoever (including, #without limitation, damages for loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation, even if Microsoft has been advised of the possibility of such damages
+In no event shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the scripts be liable for any damages whatsoever (including, #without limitation, 
+damages for loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation, 
+even if Microsoft has been advised of the possibility of such damages
 #>
-
-$ExecutionTime = Get-Date
-$StartTime = Get-Date $ExecutionTime -Format dd-MM-yyyy-HH-mm-ss
 
 #Initialize Variables
 #$global:authToken = $null
-$global:TenantID = "d948da51-c23f-4c15-89e5-b2dde3add88d"
-$global:ClientID = "98750a15-50d9-488a-90ef-decdc06378b5"
-$global:ClientSecret = "Xq58Q~zAej8YzmySSDG_bfl~yVGQp81Ur8P8.cRE"
-
-
-$LogFile = "C:\Windows\Temp\graph.log"
+$global:TenantID = ""
+$global:ClientID = ""
+$global:ClientSecret = ""
 
 ####################################################
 Function Get-AuthToken {
