@@ -7,8 +7,8 @@
 # The script is provided AS IS without warranty of any kind.                                        #
 #                                                                                                   #
 # Script Name : SelfHeal.PS1                                                                        #
-# Purpose     : The script is  to discover potential cause of client inactivity                     #
-#               and stores results to azure storage.                                                #
+# Purpose     : The script is to discover potential cause of client inactivity                      #
+#               and remediate where ever possible.                                                  #
 # Version     : v1.0                                                                                #
 # Created by  : sshansu@microsoft.com								    #
 #                                                                                                   #    
