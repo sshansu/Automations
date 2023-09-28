@@ -1,9 +1,22 @@
-﻿<#
+<#
 This sample script is not supported under any Microsoft standard support program or service.
 The sample script is provided AS IS without warranty of any kind.
 Microsoft further disclaims all implied warranties including, without limitation, any implied warranties of merchantability or of fitness for a particular purpose.
 The entire risk arising out of the use or performance of the sample scripts and documentation remains with you.
-In no event shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the scripts be liable for any damages whatsoever (including, #without limitation, damages for loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation, even if Microsoft has been advised of the possibility of such damages
+In no event shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the scripts be liable for any damages whatsoever (including, #without limitation, damages for 
+loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation, even if 
+Microsoft has been advised of the possibility of such damages
+
+This script requires azure application registered with below permissions granted to graph API
+
+Device.Read.All
+Device.Read
+DeviceManagementApps.Read.All
+DeviceManagementConfiguration.Read.All
+DeviceManagementServiceConfig.Read.All
+Directory.Read.All
+
+For the script to work, you must have exported the imported GPO settings in a CSV Format. We'll have to execute Export_GPOSettings_from_GPOAnalytics.ps1 first. 
 #>
 
 $ExecutionTime = Get-Date
@@ -11,10 +24,9 @@ $StartTime = Get-Date $ExecutionTime -Format dd-MM-yyyy-HH-mm-ss
 
 #Initialize Variables
 #$global:authToken = $null
-$global:TenantID = "d948da51-c23f-4c15-89e5-b2dde3add88d"
-$global:ClientID = "5b392c21-9fff-4f7d-8bec-c160dbe8402f"
-$global:ClientSecret = "dr-8Q~MKUZBYK4dm_c5BLNxMaAapQjqVfD-ZsaBi"
-$LogFile = "C:\Windows\Temp\graph.log"
+$global:TenantID = ""
+$global:ClientID = ""
+$global:ClientSecret = ""
 
 ####################################################
 Function Get-AuthToken {
