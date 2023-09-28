@@ -1,5 +1,30 @@
-﻿#Read-host "Do you want to conteinue"
+﻿<#
+This sample script is not supported under any Microsoft standard support program or service.
+The sample script is provided AS IS without warranty of any kind.
+Microsoft further disclaims all implied warranties including, without limitation, any implied warranties of merchantability or of fitness for a particular purpose.
+The entire risk arising out of the use or performance of the sample scripts and documentation remains with you.
+In no event shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the scripts be liable for any damages whatsoever (including, #without limitation, damages for 
+loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation, even if 
+Microsoft has been advised of the possibility of such damages
 
+The script tracks:
+1.	Time when last patch got installed. 
+2.	Last Windows 10/11 update that got installed.
+3.	Update Title.
+4.	Installation State and Reboot required or not. 
+5.	OS Build/Current Patch level/OS
+6.	UseWUServer value.
+7.	Whether Target Release Version policy is applied.
+8.	Is machine able to reach out to Windows Update URL.
+9.	Are there any gated blocks/red reasons for upgrade to Windows 11.
+10.	Is Windows 11 being currently in progress (Win11PreDownloadMode).
+11.	Is Windows 11 already downloaded.
+12.	How many previous attempts to install Windows 11. 
+13.	Current Windows 11 installation progress. 
+14.	Restart Pending timelines.
+15.	Errors, if any. 
+#>
+#Read-host "Do you want to continue"
 #################################
 ##MAIN SCRIPT STARTS
 #################################
