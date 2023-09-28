@@ -1,27 +1,25 @@
-﻿#####################################################################################################
-# ALL THE SCRIPTS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED                   #
-# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR         #
-# FITNESS FOR A PARTICULAR PURPOSE.                                                                 #
-#                                                                                                   #
-# This script is not supported under any Microsoft standard support program or service.             #
-# The script is provided AS IS without warranty of any kind.                                        #
-#                                                                                                   #
-# Script Name : MergeReport.PS1                                                                     #
-# Purpose     : The script is used to Merge the reports derived out of inactive clients.            #
-# Version     : v1.0                                                                                #
-# Created by  : sshansu@microsoft.com                                                               #
-#####################################################################################################
-
-cls
-
+﻿#######################################################################################################
+# ALL THE SCRIPTS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED                     #
+# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR           #
+# FITNESS FOR A PARTICULAR PURPOSE.                                                                   #
+#                                                                                                     #
+# This script is not supported under any Microsoft standard support program or service.               #
+# The script is provided AS IS without warranty of any kind.                                          #
+#                                                                                                     #
+# Script Name : MergeReport.PS1                                                                       #
+# Purpose     : The script is used to Merge the reports stored in storage account                     #
+#               Before executing this script, we'll have to execute Report_Windows11_CurrentStatus.ps1 #
+# Version     : v1.0                                                                                  #
+# Created by  : sshansu@microsoft.com                                                                 #
+#######################################################################################################
 
 # Define Variables
 $root = "C:\Temp\Windows11"
 $sourcefolder = "$root\zip"   ##### <----- DEFINE YOUR PATH HERE
 $Extpath = "$sourcefolder\zipextract"
-$storageAccName = "arcadewin11report"  # "shancmg" #
-$container = "getwinreport" 
-$sas = "?sp=rw&st=2023-08-10T09:50:17Z&se=2023-12-31T17:50:17Z&spr=https&sv=2022-11-02&sr=c&sig=pGZhejvw3ef1TwguozxOlOX%2B8QTXuE01iyWk%2Bi8iLNM%3D"       
+$storageAccName = "arcadewin11report"  # STORAGE ACCOUNT NAME
+$container = "getwinreport"  # CONTAINER NAME
+$sas = "?sp=rw&st=2023-08-10T09:50:17Z&se=2023-12-31T17:50:17Z&spr=https&sv=2022-11-02&sr=c&sig=pGZhejvw3ef1"      # SAS TOKEN
 $downloadLocation = $Extpath 
 $destination = $downloadLocation + "\" + $container 
 
