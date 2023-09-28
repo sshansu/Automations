@@ -1,21 +1,34 @@
-﻿#####################################################################################################
-# ALL THE SCRIPTS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED                   #
-# OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR         #
-# FITNESS FOR A PARTICULAR PURPOSE.                                                                 #
-#                                                                                                   #
-# This script is not supported under any Microsoft standard support program or service.             #
-# The script is provided AS IS without warranty of any kind.                                        #
-#                                                                                                   #
-# Script Name : ReInitiateCompliance                                                                #
-# Purpose     : To retrigger compliance re-evaluation                                               #
-# Version     : v1.0                                                                                #
-#####################################################################################################
+<##########################################################################################################################################################################
+This sample script is not supported under any Microsoft standard support program or service.
+The sample script is provided AS IS without warranty of any kind.
+Microsoft further disclaims all implied warranties including, without limitation, any implied warranties of merchantability or of fitness for a particular purpose.
+The entire risk arising out of the use or performance of the sample scripts and documentation remains with you.
+In no event shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the scripts be liable for any damages whatsoever (including, #without limitation, damages for 
+loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to use the sample scripts or documentation, even if 
+Microsoft has been advised of the possibility of such damages
+
+Pre-requisite
+Ensure we execute the script on a client machine 60 minutes after manually fixing the custom compliant setting on the machine. 
+
+How does the script work?
+The script is intended to be executed on machine that’s non-compliant due to a specific setting within the compliance policy. We assume that the custom compliance script as part of your 
+compliance policy has already been executed on the machine and the resultant JSON output is applied on the device marking the machine non-compliant. Below are the actions the PowerShell 
+script will perform to force IME service to re-trigger the custom compliance script.
+
+1. Deletes the LastExecution key from "HKLM:\SOFTWARE\Microsoft\IntuneManagementExtension\SideCarPolicies\Scripts\Execution"
+2. Restarts IME Service. 
+3. Waits for Agent Executor to re-run the Custom Compliance Script.
+4. Verifies the status in registry “HKLM:\SOFTWARE\Microsoft\IntuneManagementExtension\SideCarPolicies\Scripts\Reports" and prints in the log. 
+5. Performs Sync by invoking “PushLaunch” scheduled task from \Microsoft\Windows\EnterpriseMgmt\<YOUR DMCLIENT ID>\. 
+6. Log is generated on C:\Windows\Temp\RescanCompliance.log, mentioned in Line 28 in the above script. 
+###########################################################################################################################################################################>
+
 sleep 10 
-# some variables
-$ScriptID = "e12f13d4-01f8-4a3c-8ebe-f86b45488614"
+# Define variables
+$ScriptID = "" # Specify Script ID from Intune -- https://endpoint.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesComplianceMenu/~/customComplianceScripts
 $Regpath = "HKLM:\SOFTWARE\Microsoft\IntuneManagementExtension\SideCarPolicies\Scripts\Execution"
 $RegPathReport = "HKLM:\SOFTWARE\Microsoft\IntuneManagementExtension\SideCarPolicies\Scripts\Reports"
-$key = "LastExecution"
+$key = "LastExecution" 
 $Currentuser = (Get-WmiObject -Class Win32_Process -Filter 'Name="explorer.exe"').GetOwner().User | select -first 1
 $path = "C:\ProgramData\Microsoft\IntuneManagementExtension\Logs\AgentExecutor.log" 
 $Searchstring = "$($ScriptID)"
