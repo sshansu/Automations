@@ -31,12 +31,10 @@ The script tracks:
 $ComputerName = $env:computername
 $Module = "PSWindowsUpdate"
 ###
-$SAS = "?sp=rw&st=2023-08-10T09:50:17Z&se=2023-12-31T17:50:17Z&spr=https&sv=2022-11-02&sr=c&sig=pGZhejvw3ef1TwguozxOlOX%2B8QTXuE01iyWk%2Bi8iLNM%3D"
-$StorageName = "arcadewin11report.blob.core.windows.net"
-$Container = "getwinreport"
+$SAS = " "
+$StorageName = " "
+$Container = " "
 $FilePath = "C:\Windows\Temp\$($ComputerName)_WinUpdateExport.csv"
-
-#https://arcadewin11report.blob.core.windows.net/getwinreport?sp=rw&st=2023-08-10T09:50:17Z&se=2023-12-31T17:50:17Z&spr=https&sv=2022-11-02&sr=c&sig=pGZhejvw3ef1TwguozxOlOX%2B8QTXuE01iyWk%2Bi8iLNM%3D
 
 ###
 
